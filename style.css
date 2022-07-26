@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700;9..144,900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -21,6 +22,10 @@
     --fm-Fraunces: 'Fraunces';
 }
 
+.hide {
+    display: none;
+}
+
 body {
     font-size: 18px;
     font-family: 'Barlow';
@@ -28,6 +33,44 @@ body {
 
 img {
     max-width: 100%;
+}
+
+.mobile-menu {
+    background-color: white;
+    color: black;
+    font-size: .8em;
+    color: var(--Dark-grayish-blue);
+    margin-top: 1em;
+    border-radius: .5em;
+    transform: translateX(200%);
+    animation: mobileMenu 1000ms ease-in-out;
+    animation-fill-mode: forwards;
+
+}
+
+@keyframes mobileMenu {
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+.mobile-menu ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    padding: 1em;
+}
+
+.mobile-menu ul li {
+    margin-bottom: 1em;
+}
+
+.mobile-menu ul button {
+    background-color: var(--Yellow);
+    padding: 1em 2em;
+    font-weight: bolder;
 }
 
 ul {
@@ -64,11 +107,11 @@ header {
     padding-bottom: 10em;
 }
 
-header > div {
+header>div {
     text-align: center;
 }
 
-header > div img {
+header>div img {
     position: relative;
     top: 3.6em;
     height: 6em;
@@ -81,17 +124,17 @@ header h1 {
 }
 
 
-article  {
+article {
     display: flex;
     align-content: center;
     justify-content: space-between;
 }
 
-article > *:nth-child(1) {
-  gap: 1 1 70%;
+article>*:nth-child(1) {
+    gap: 1 1 70%;
 }
 
-article > *:nth-child(2) {
+article>*:nth-child(2) {
     display: flex;
     font-size: .7em;
     align-content: center;
@@ -160,7 +203,7 @@ button {
     color: var(--Darkdesaturated-cyan-graphic-design-text);
 }
 
-.graphic-design-bg > div {
+.graphic-design-bg>div {
     margin-top: 20em;
 }
 
@@ -185,7 +228,7 @@ button {
     color: var(--Darkdesaturated-cyan-graphic-design-text);
 }
 
-.photography-bg > div {
+.photography-bg>div {
     margin-top: 23em;
 }
 
@@ -216,7 +259,7 @@ button {
     margin-bottom: 1em;
 }
 
-.testmonial-grid > * {
+.testmonial-grid>* {
     padding: 2.5em;
 }
 
@@ -239,7 +282,7 @@ button {
 
 .four-img-grid {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
 }
 
 .bg-4 {
@@ -279,19 +322,19 @@ footer img {
     width: 35%;
 }
 
-footer > .footer-ul {
+footer>.footer-ul {
     align-content: center;
     justify-content: space-around;
     opacity: .8;
 }
 
-footer > .footer-ul-icon {
+footer>.footer-ul-icon {
     margin-top: 4em;
     justify-content: center;
     align-items: center;
 }
 
-footer > .footer-ul-icon img {
+footer>.footer-ul-icon img {
     margin: 1em;
     cursor: pointer;
 }
@@ -299,58 +342,70 @@ footer > .footer-ul-icon img {
 @media (min-width:700px) {
     .grid-containers {
         display: grid;
-        grid-template-columns: repeat(2,1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
+
     .brand {
         grid-column-start: 1;
         grid-row-start: 1;
     }
+
     .audience {
         grid-column-start: 2;
         grid-row-start: 2;
     }
+
     header {
         background-image: url(/desktop/image-header.jpg);
         background-size: cover;
         background-position: bottom 10em;
     }
+
     .brand {
         text-align: left;
         margin-top: 2em;
         padding-bottom: 10em;
         padding-left: 5em;
     }
+
     .brand h1 {
         font-size: 2.5em;
         margin-bottom: 1em;
     }
+
     .brand p {
         margin-bottom: 3em;
         font-size: 1.2em;
     }
+
     .bg-egg {
         background-image: url(/desktop/image-transform.jpg);
     }
+
     .bg-cup {
         background-image: url(/desktop/image-stand-out.jpg);
     }
+
     .graphic-design-bg {
         background-image: url(/desktop/image-graphic-design.jpg);
         background-position: center;
     }
+
     .graphic-design-bg p {
         padding-left: 8em;
         padding-right: 8em;
     }
+
     .photography-bg {
         background-image: url(/desktop/image-photography.jpg);
         background-position: center;
     }
+
     .photography-bg p {
         padding-left: 8em;
         padding-right: 8em;
     }
-    
+
     .testmonial-grid {
         display: flex;
         justify-content: center;
@@ -358,38 +413,105 @@ footer > .footer-ul-icon img {
         text-align: center;
         padding: 4em;
     }
+
     .testmonial-grid img {
         min-width: 30%;
     }
+
     .testmonial-grid p {
         font-size: 1em;
     }
 
-   .bg-milk {
-    background-image: url(/desktop/image-gallery-milkbottles.jpg);
-   }
-   .four-img-grid{
-       display: grid;
-       grid-template-columns: repeat(4,1fr);
-   }
-   .bg-4 {
-    padding-bottom: 30em;
-   }
-   .bg-orange{
-       background-image: url(/desktop/image-gallery-orange.jpg);
-   }
-   .bg-cone {
-       background-image: url(/desktop/image-gallery-cone.jpg);
-   }
-   .bg-sugar {
-       background-image: url(/desktop/image-gallery-sugarcubes.jpg);
-   }
-    footer > img {
+    .bg-milk {
+        background-image: url(/desktop/image-gallery-milkbottles.jpg);
+    }
+
+    .four-img-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .bg-4 {
+        padding-bottom: 30em;
+    }
+
+    .bg-orange {
+        background-image: url(/desktop/image-gallery-orange.jpg);
+    }
+
+    .bg-cone {
+        background-image: url(/desktop/image-gallery-cone.jpg);
+    }
+
+    .bg-sugar {
+        background-image: url(/desktop/image-gallery-sugarcubes.jpg);
+    }
+
+    footer>img {
         width: 15%;
     }
+
     footer .footer-ul {
         justify-content: center;
         gap: 3em;
     }
-   
+
+}
+
+@media all and (max-width: 400px) {
+    body {
+        font-size: .8em;
+    }
+
+    #header-ul li:first-child {
+        font-weight: 900;
+    }
+
+    #hamburger {
+        width: 70%;
+    }
+
+    .graphic-content,
+    .photography-content {
+        padding-top: 3em;
+    }
+
+    .testmonial-grid h2 {
+        font-size: 1.5em;
+    }
+
+}
+
+
+
+.close-icon {
+    width: 1.7em;
+    display: none;
+}
+
+.mobile-menu {
+    background-color: var(--White);
+    color: var(--Grayish-blue);
+    font-weight: bolder;
+    margin-top: 1em;
+}
+
+.hidden {
+    display: none;
+}
+
+.mobile-menu ul {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+}
+
+.mobile-menu ul li {
+    margin: .5em;
+}
+
+.mobile-menu ul li button {
+    padding: 1.5em;
+    background-color: var(--Yellow);
+    font-size: .6em
 }
